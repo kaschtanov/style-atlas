@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style atlas: thirty websites, seven ways to look</title>
+  <meta name="description" content="A small field guide to how notable websites look in 2025 and 2026: thirty public sites sorted into seven style families, each with a one-line note.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#atlas">Skip to the atlas</a>
+
+  <header class="masthead">
+    <p class="kicker"><span>Style atlas</span><span>Field guide, November 2026</span></p>
+    <h1>Thirty websites,<br><em>seven ways</em> to look.</h1>
+    <p class="lede">A small guide to how notable websites look right now. Each family names what the eye notices first; each site gets one line on why it belongs there. Pick a family to narrow the list.</p>
+  </header>
+
+  <nav class="filters" aria-label="Style families">
+    <div class="chips" id="chips" role="group" aria-label="Show a style family"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </nav>
+
+  <main id="atlas" class="atlas" tabindex="-1"></main>
+
+  <section class="made" aria-labelledby="made-title">
+    <h2 id="made-title">How this was made</h2>
+    <div class="made-cols">
+      <p>One prompt to Claude Code asked for a static, single-page atlas: research public websites that stood out in 2025 and 2026, check every link in a browser, sort them into families with names and rules of our own, and write one line per site. Claude Code then wrote the HTML, CSS and a few lines of JavaScript, served the page locally and checked it at 375 and 1440 pixels.</p>
+      <p>There are no screenshots of the sites here, only links and our own words; the small pictures are CSS sketches of each family. The links were checked on 6 November 2026, and websites change, so a site may have moved on. Method after a post by <a href="https://x.com/0xMovez/status/2118270441609371701">@0xMovez on X</a>.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Style atlas, a Framiad workflow test. Plain HTML, CSS and JavaScript, no build step.</p>
+  </footer>
+
+  <template id="family-tpl">
+    <section class="family">
+      <div class="family-head">
+        <div class="swatch" aria-hidden="true"></div>
+        <div>
+          <p class="family-no"></p>
+          <h2 class="family-name"></h2>
+          <p class="family-rule"></p>
+          <ul class="signs"></ul>
+        </div>
+      </div>
+      <ol class="sites"></ol>
+    </section>
+  </template>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
