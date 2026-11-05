@@ -23,6 +23,7 @@ relative, so it also works from a sub-path such as GitHub Pages.
 | `site/app.js` | renders the families, the chips and the filter (the chosen family is kept in the URL hash, e.g. `#glow`) |
 | `site/styles.css` | the look, the CSS swatches, dark mode, 375 px layout |
 | `tools/check-links.sh` | HTTP status of every link |
+| `tools/frames_to_mp4.py` | numbered JPEG frames to an H.264 MP4 with Blender's sequencer (Standard view transform) |
 | `tools/capture.mjs` | headless checks and screenshots at 1440 and 375 px, light and dark; `--frames` records a scroll |
 | `captures/` | screenshots and `atlas-scroll.mp4` (frames are not kept) |
 
@@ -39,8 +40,10 @@ relative, so it also works from a sub-path such as GitHub Pages.
   24 px is the inline credit link inside a sentence (allowed by WCAG 2.5.8). All 30 links answered 200.
 - Fix after the first look: the family swatch showed through the semi-transparent sticky filter bar; the bar is now
   opaque and the sticky headings follow its measured height.
-- Video: 420 frames at 1280 x 720, 30 fps, stitched to H.264 with Blender (`frames_to_mp4.py` from the Tidelight
-  project): `captures/atlas-scroll.mp4`, 14 s, about 3 MB.
+- Video: 420 frames at 1280 x 720, 30 fps, stitched to H.264 with Blender: `captures/atlas-scroll.mp4`, 14 s, 3.4 MB.
+  The Tidelight helper greyed the colours (Blender's default AgX view transform: paper #F3EFE6 became #C8C6C4); our copy
+  `tools/frames_to_mp4.py` sets the Standard view transform.
+- Framiad: built as a Frame in the editor (Mara Vale) and added to the demo data as /frames/a-style-atlas-of-30-websites.
 
 ## Publishing (waits for the owner's approval)
 
